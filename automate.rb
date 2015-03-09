@@ -3,7 +3,6 @@ require 'json'
 require 'screenshot'
 require 'page-object'
 require_relative 'visual_editor_page.rb'
-# require 'pry'
 
 def handle_step page, step, i
 	if step["action"] == "click"
@@ -33,5 +32,3 @@ json_hash["languages"].split(',').each do|language|
 	Screenshot.capture(browser, "#{json_hash["title"]}-#{language}.png", screenshot_elements)
 end
 browser.close
-# browser.click
-# my_page_object = VisualEditorPage.new(browser)
