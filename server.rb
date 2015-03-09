@@ -3,6 +3,8 @@ require 'json'
 require 'nokogiri'
 require 'curb'
 
+set :bind, '0.0.0.0'
+
 def create_scenario hash
   create_page_object hash
 end
