@@ -18,7 +18,7 @@ ENV['DISPLAY'] = ':10'
 json_hash = JSON.parse(File.read("steps.json"))
 browser = Watir::Browser.new :firefox
 json_hash["languages"].split(',').each do|language|
-	browser.goto "http://en.wikipedia.beta.wmflabs.org/wiki/References?veaction=edit&vehidebetadialog=true&uselang=#{language}"
+	browser.goto "http://test2.wikipedia.org/wiki/References?veaction=edit&vehidebetadialog=true&uselang=#{language}"
 	page = VisualEditorPage.new(browser)
 
 	i = 0

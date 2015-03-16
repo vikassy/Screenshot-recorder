@@ -25,7 +25,7 @@ def create_page_object hash
 end
 
 get '/wiki/References' do
-  http = Curl.get("http://en.wikipedia.beta.wmflabs.org/wiki/References?veaction=edit")
+  http = Curl.get("http://test2.wikipedia.org/wiki/References?veaction=edit")
   html = Nokogiri::HTML http.body
   html.xpath("//head/*[1]").before("<script src='/extension.js'></script>")
   html.xpath("//body/*[1]").after("<script src='/module.js'></script>")
@@ -34,7 +34,7 @@ get '/wiki/References' do
 end
 
 get '/w/api.php' do
-  http = Curl.get("http://en.wikipedia.beta.wmflabs.org/w/api.php?#{request.query_string}")
+  http = Curl.get("http://test2.wikipedia.org/w/api.php?#{request.query_string}")
   http.body
 end
 
