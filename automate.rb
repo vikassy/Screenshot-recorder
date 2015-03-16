@@ -4,6 +4,7 @@ require 'screenshot'
 require 'page-object'
 require_relative 'visual_editor_page.rb'
 
+
 def handle_step page, step, i
 	if step["action"] == "click"
 		page.send("element_#{i}_element").send("click")
@@ -13,6 +14,7 @@ def handle_step page, step, i
 	end
 end
 
+ENV['DISPLAY'] = ':10'
 json_hash = JSON.parse(File.read("steps.json"))
 browser = Watir::Browser.new :firefox
 json_hash["languages"].split(',').each do|language|
